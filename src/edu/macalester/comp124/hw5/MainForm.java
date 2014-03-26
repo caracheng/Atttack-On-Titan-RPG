@@ -202,7 +202,8 @@ public class MainForm extends javax.swing.JFrame
 	{
 		for (Agent agent : game.agents)
 		{
-			Image image = scaledImages.get(agent.type);
+//            System.out.println("drawing agent " + agent.name + " at " + agent.x+","+ agent.y+" image "+ agent.type);
+            Image image = scaledImages.get(agent.type);
 			backBuffer.drawImage(image,
 					agent.x*tileWidth, agent.y*tileHeight,
 					null);

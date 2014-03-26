@@ -11,10 +11,14 @@ abstract class Agent
 {
 	public String type;	// tells us which picture to draw for this agent
 	public int x, y;
+    public String name;
+    public int health = 50;
+    public boolean defeat = false;
 
-	public Agent(String type)
+	public Agent(String type, String name)
 	{
 		this.type = type;
+        this.name = name;
 	}
 
 	/**

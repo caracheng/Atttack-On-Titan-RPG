@@ -4,16 +4,14 @@
  */
 package edu.macalester.comp124.hw5;
 
-import java.awt.Graphics;
-import java.awt.Image;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import javax.imageio.ImageIO;
-import javax.swing.ComboBoxModel;
-import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -69,7 +67,7 @@ public class CharacterDesignerForm extends javax.swing.JFrame
 		//--- Draw the background / body
 		backBuffer.drawImage(images.get("body"), 0, 0, null);
 
-		//--- Items
+		//--- Item
 		if (null != itemOnHead)
 		{
 			backBuffer.drawImage(images.get(itemOnHead.id), 0, 0, null);
