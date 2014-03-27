@@ -9,7 +9,6 @@ import java.util.Random;
  */
 public class Titan extends RandomlyMovingAgent{
 
-    protected Map map;
     public static List<Attack> attacks = new LinkedList<>();
     public boolean defeat = false;
 
@@ -27,7 +26,7 @@ public class Titan extends RandomlyMovingAgent{
 
     public void initialize()
     {
-        attacks.clear();
+        //attacks.clear();
         attacks.add(Attack.getAttack("Step on you"));
         attacks.add(Attack.getAttack("Catch you in hand and crushes you"));
         attacks.add(Attack.getAttack("Bite of a limb"));
@@ -35,11 +34,5 @@ public class Titan extends RandomlyMovingAgent{
         attacks.add(Attack.getAttack("Kill your horse"));
     }
 
-    protected Attack getTitanAttack()
-    {
-        int numberOfAvailableAttacks = attacks.size();
-        int attackNumber = randomNumberGenerator.nextInt(numberOfAvailableAttacks);
-        return attacks.get(attackNumber);
-    }
 }
 
