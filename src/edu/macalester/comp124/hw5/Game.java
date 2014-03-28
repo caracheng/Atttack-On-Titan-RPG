@@ -20,7 +20,6 @@ public class Game
     Random dice = new Random();
 
     public boolean gameOver = false;
-
 	public Game()
 	{
 
@@ -99,6 +98,7 @@ public class Game
 	public void movePlayer(int x, int y)
 	{
 
+
 		//--- Don't do anything if the move is illegal
         String newTerrainType = map.terrain[x][y];
         if (!map.passibility.containsKey(newTerrainType))
@@ -133,6 +133,7 @@ public class Game
         }
 		//--- Assuming this is the last thing that happens in the round,
 		//---	start a new round. This lets the other agents make their moves.
+
         totalVictory();
         nextTurn();
 
@@ -283,7 +284,7 @@ public class Game
         if(counterAttack(name))
         {
             System.out.println("You have served your duty to humanity.");
-            gameOver = true;
+            System.exit(0);
         }
     }
 
@@ -292,7 +293,7 @@ public class Game
         if(moeTitan.defeat == true && armouredTitan.defeat == true && colossalTitan.defeat == true && femaleTitan.defeat == true)
         {
             System.out.println("You have given humanity a better chance of survival against the Titans.");
-            gameOver = true;
+            System.exit(0);
         }
     }
 
@@ -307,7 +308,7 @@ public class Game
             {
                 if(!agent.defeat)
                 {
-                    int j = dice.nextInt(5);
+                    int j = dice.nextInt(Titan.attacks.size());
                     for (int k=0; k <Titan.attacks.size(); k++)
                     {
                         Attack attack = Titan.attacks.get(j);
